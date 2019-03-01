@@ -21,8 +21,10 @@ namespace Sudoku
         {
 
         }
+       //Action apos clicar o botao de Inicio
         private void button1_Click(object sender, EventArgs e)
         {
+            //Adiciona a quantidade de campos vazios para a variavel "Vazios" do tipo Inteiro
             int Vazios = Convert.ToInt16(NumericCamposVazios.Value);
 
             //Numero do bloco
@@ -38,18 +40,22 @@ namespace Sudoku
             }
             //Cria valor aleatório
             Random valorRandom = new Random();
+            //Cria duas variaveis Inteiras
             int Linha;
             int Coluna;
-            //
+            //Repete ate que todos os valores escolhidos para serem repetidos sejam atendidos
             for (int i = 1; i < Vazios; i++)
             {
+                //escolhe para a Linha um valor aleatorio entre 0 e 8
                 Linha = valorRandom.Next(0, 8);
+                //escolhe para a Coluna um valor aleatorio entre 0 e 8
                 Coluna = valorRandom.Next(0, 8);
+                //no local aleatorio adiciona o valor 0
                 field[Linha,Coluna] = 0;
             }
-
-
+            //Chama o Metodo que mostra os espacos da MaskTextBox
             MostraEspacosAsync();
+            //Chama o Metodo que adiciona os valores para os espacos
             AdicionaValoresAsync(field);
             
         }
@@ -59,10 +65,14 @@ namespace Sudoku
         public async void AdicionaValoresAsync(int[,]field)
         {
             //PRIMEIRA LINHA
+           //Atraso de 0,1 segundo para aparecer aos poucos
             await Task.Delay(100);
+            //verifica se o campo esta igual a 0
             if (field[0, 0] == 0)
+            //se estiver adiciona para o local o valor null;
                 MskTxtBx00.Text = null;
             else
+            //se nao adiciona o valor determinado da matriz
                 MskTxtBx00.Text = field[0, 0].ToString();
 
             await Task.Delay(100);
@@ -507,6 +517,7 @@ namespace Sudoku
         public async void MostraEspacosAsync()
         {
             //PRIMEIRA LINHA
+            //Mostra os MaskTextBox com atraso de 0,5 segundos para apresentar
             await Task.Delay(500);
             MskTxtBx00.Visible = true; MskTxtBx01.Visible = true; MskTxtBx02.Visible = true; MskTxtBx03.Visible = true;
             MskTxtBx04.Visible = true; MskTxtBx05.Visible = true; MskTxtBx06.Visible = true; MskTxtBx07.Visible = true;
