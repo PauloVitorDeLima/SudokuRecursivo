@@ -85,7 +85,6 @@ namespace Sudoku
                 box.Text = valor.ToString();
             }
         }
-            //System.Threading.Thread.Sleep(1000);
             
         public async void AdicionaValoresAsync(int[,]field)
         {
