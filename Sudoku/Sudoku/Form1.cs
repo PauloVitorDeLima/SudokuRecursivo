@@ -57,7 +57,7 @@ namespace Sudoku
                 Campos[LinhaRandom,ColunaRandom] = 0;
             }
             //Chama o Metodo que mostra os espacos da MaskTextBox
-            MostraEspacosAsync();
+            //MostraEspacosAsync();
             //Chama o Metodo que adiciona os valores para os espacos
             AdicionaValoresAsync(Campos);
             
@@ -148,7 +148,7 @@ namespace Sudoku
             AdicionaValores(MskTxtBx84, field[8, 4]); await Task.Delay(50); AdicionaValores(MskTxtBx85, field[8, 5]); await Task.Delay(50); AdicionaValores(MskTxtBx86, field[8, 6]); await Task.Delay(50); AdicionaValores(MskTxtBx87, field[8, 7]); await Task.Delay(50);
             AdicionaValores(MskTxtBx88, field[8, 8]);
         }
-        public async void MostraEspacosAsync()
+        /*public async void MostraEspacosAsync()
         {
 
             //PRIMEIRA LINHA
@@ -208,5 +208,6 @@ namespace Sudoku
             MskTxtBx84.Visible = true; MskTxtBx85.Visible = true; MskTxtBx86.Visible = true; MskTxtBx87.Visible = true;
             MskTxtBx88.Visible = true;
         }
+        */
     }
 }
